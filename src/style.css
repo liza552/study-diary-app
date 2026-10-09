@@ -1,0 +1,257 @@
+* { 
+    box-sizing: border-box;
+     margin: 0; padding: 0;
+    }
+body { font-family: Arial, sans-serif; background: #101a31; }
+
+.login-page { min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+background:
+    radial-gradient(
+        circle at center,
+        #24365c 0%,
+        #152342 50%,
+        #0e172d 100%
+    );
+}
+.login-card { width: 505px;
+padding: 38px 48px 48px;
+
+border-radius: 20px;
+
+background: linear-gradient(
+    145deg,
+    #566b95,
+    #52668f
+);
+
+box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35);
+}
+.login-card h1 { color: white;
+text-align: center;
+
+font-size: 38px;
+
+margin-bottom: 22px;
+}
+.login-description { color: white;
+text-align: center;
+
+font-size: 18px;
+
+font-weight: 600;
+
+line-height: 1.35;
+
+margin-bottom: 35px;
+}
+.login-input { width: 100%; height: 55px;
+display: flex;
+align-items: center;
+
+border: 2px solid white;
+border-radius: 11px;
+
+margin-bottom: 25px;
+
+padding: 0 17px;
+}
+.login-icon { width: 40px;
+color: white;
+
+font-size: 27px;
+}
+.login-input input { width: 100%;
+border: none;
+outline: none;
+
+background: transparent;
+
+color: white;
+
+font-size: 17px;
+
+font-weight: 600;
+}
+.login-input input::placeholder { color: white; opacity: 1; }
+.login-button { width: 100%; height: 55px;
+border: none;
+border-radius: 11px;
+
+background: #172643;
+
+color: white;
+
+font-size: 18px;
+font-weight: 700;
+
+cursor: pointer;
+
+margin-top: 12px;
+}
+.login-button:hover { background: #101d39; }
+/* ========================= УЧЕБНЫЙ ДНЕВНИК ========================= */
+.diary-page { min-height: 100vh;
+background:
+    linear-gradient(
+        135deg,
+        #101a32,
+        #1a2949,
+        #111b34
+    );
+
+color: white;
+}
+/* Верхняя панель */
+.diary-header { height: 120px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+padding: 0 60px;
+
+border-bottom: 2px solid white;
+}
+.diary-header h1 { font-size: 40px; }
+.header-icons { display: flex; align-items: center; gap: 30px; }
+.bell { font-size: 40px; }
+.profile { width: 70px; height: 70px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 50%;
+
+background: #748bbd;
+
+font-size: 38px;
+}
+/* Календарь */
+.calendar { padding: 25px 60px 20px; }
+.calendar-top { display: flex; align-items: center; justify-content: space-between;
+margin-bottom: 35px;
+}
+.calendar-top h2 { font-size: 34px; }
+.arrows { display: flex; gap: 35px;
+font-size: 65px;
+
+line-height: 30px;
+}
+.week, .days { display: grid;
+grid-template-columns:
+    repeat(7, 1fr);
+
+text-align: center;
+}
+.week { margin-bottom: 18px; }
+.week div { font-size: 27px; font-weight: 700; }
+.week div:first-child { color: #779de8; }
+/* Числа */
+.days { row-gap: 20px; min-height: 330px; }
+.days > div { min-height: 65px;
+font-size: 27px;
+
+font-weight: 700;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+flex-direction: column;
+}
+/* Выбранный день */
+.selected-day { width: 75px !important; height: 65px;
+justify-self: center;
+
+border-radius: 18px;
+
+background: #667fc0;
+}
+/* Экзамен */
+.exam-day { gap: 4px; }
+.exam-day small { padding: 5px 8px;
+border-radius: 7px;
+
+background: #ff6d6d;
+
+font-size: 14px;
+
+font-weight: 700;
+}
+/* Маленькие задания */
+.tasks-day { position: relative; }
+.mini-tasks { display: flex;
+flex-direction: column;
+
+align-items: flex-start;
+
+font-size: 10px;
+
+line-height: 12px;
+
+font-weight: 500;
+}
+.mini-tasks span { display: flex; align-items: center; }
+.mini-tasks i, .lab-text i { width: 8px; height: 8px;
+display: inline-block;
+
+border-radius: 50%;
+
+margin-right: 3px;
+}
+.green { background: #35d85a; }
+.yellow { background: #ffd21c; }
+.red { background: #ff4438; }
+.lab-text { font-size: 10px; font-weight: 500; }
+/* Легенда */
+.legend { display: flex;
+align-items: center;
+
+gap: 65px;
+
+margin-top: 20px;
+
+font-size: 18px;
+
+font-weight: 700;
+}
+.legend > div { display: flex;
+align-items: center;
+
+gap: 12px;
+}
+.legend-circle { width: 32px; height: 32px;
+display: inline-block;
+
+border-radius: 50%;
+}
+.green-circle { background: #35d85a; }
+.yellow-circle { background: #ffc400; }
+.red-circle { background: #ff4438; }
+/* Нижняя панель */
+.bottom-nav { height: 100px;
+display: flex;
+
+align-items: center;
+justify-content: space-around;
+
+border-top: 2px solid white;
+
+margin-top: 5px;
+}
+.nav-item { width: 70px; height: 70px;
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+color: white;
+
+font-size: 42px;
+}
+.nav-item.active { color: #4d8cff; }
