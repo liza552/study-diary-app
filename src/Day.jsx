@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getDay, toggleTask, addTask, deleteTask, saveNote } from './api';
 import BottomTabs from './BottomTabs';
 import AddBox from './AddBox';
+import useNoIndex from './useNoIndex';
+
 
 const LABEL = { soon: 'скоро сдача', late: 'срок сдачи истекает' };
 
@@ -11,6 +13,8 @@ export default function Day() {
   const navigate = useNavigate();
   const [data, setData] = useState({ tasks: [], exams: [], files: [] });
   const [note, setNote] = useState('');
+
+  useNoIndex();
 
   const load = () =>
     getDay(date)

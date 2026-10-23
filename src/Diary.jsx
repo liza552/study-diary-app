@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getTasks } from './api';
 import BottomTabs from './BottomTabs';
+import useNoIndex from './useNoIndex';
 
 const MONTHS = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 const DOW = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
@@ -20,6 +21,7 @@ export default function Diary() {
   const now = new Date();
   const [cur, setCur] = useState({ year: now.getFullYear(), month: now.getMonth() });
   const [tasks, setTasks] = useState([]);
+
 
   useEffect(() => {
     getTasks(cur.year, cur.month + 1).then(setTasks).catch(() => setTasks([]));
