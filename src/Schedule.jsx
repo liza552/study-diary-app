@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getSchedule, addLesson, deleteLesson } from './api';
 import BottomTabs from './BottomTabs';
 import AddBox from './AddBox';
+import useNoIndex from './useNoIndex';
 
 const DOW = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 const mins = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
@@ -22,6 +23,8 @@ export default function Schedule() {
   const todayIdx = (new Date().getDay() + 6) % 7;
   const [sel, setSel] = useState(todayIdx);
   const [lessons, setLessons] = useState([]);
+
+  useNoIndex();
 
   const load = () =>
     getSchedule(sel)

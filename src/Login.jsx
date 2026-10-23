@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { login } from './api';
+import useNoIndex from './useNoIndex';
 
 export default function Login({ onSuccess }) {
   const [form, setForm] = useState({ login: '', password: '' });
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+
+  useNoIndex();
 
   const change = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 

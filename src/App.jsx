@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Landing from './Landing';
 import Login from './Login';
 import Diary from './Diary';
 import Schedule from './Schedule';
@@ -13,11 +14,21 @@ import Stats from './Stats';
 
 export default function App() {
   const [authed, setAuthed] = useState(() => !!localStorage.getItem('token'));
-  if (!authed) return <Login onSuccess={() => setAuthed(true)} />;
+
+  if (!authed) {
+    return (
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login onSuccess={() => setAuthed(true)} />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    );
+  }
 
   return (
     <Routes>
       <Route path="/" element={<Diary />} />
+      <Route path="/login" element={<Navigate to="/" replace />} />
       <Route path="/schedule" element={<Schedule />} />
       <Route path="/day/:date" element={<Day />} />
       <Route element={<SideLayout />}>

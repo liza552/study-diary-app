@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import BottomTabs from './BottomTabs';
+import useNoIndex from './useNoIndex';
+
 
 export default function SideLayout() {
+  useNoIndex();
   return (
     <div className="side">
       <div className="side__wrap">

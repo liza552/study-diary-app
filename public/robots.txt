@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /exams
+Disallow: /teachers
+Disallow: /tasks
+Disallow: /stats
+Disallow: /api/
+
+Sitemap: https://example.com/sitemap.xml
